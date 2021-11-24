@@ -50,8 +50,6 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
-  console.log(req.params);
-  console.log("BODY: "+Object.keys(req.body));
   try {
     let categoryData = await Category.update(req.body, {
       where: {
@@ -60,10 +58,6 @@ router.put('/:id', async (req, res) => {
     })
     res.status(200).json(categoryData);
   } catch (err) {
-    console.log(err);
-    console.log(req.params.id);
-    console.log("BODY: "+Object.keys(req.body));
-    console.log("BODY: "+Object.values(req.body));
     res.status(400).json(err);
   }
 });

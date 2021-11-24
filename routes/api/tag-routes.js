@@ -57,9 +57,6 @@ router.put('/:id', async (req, res) => {
     })
     res.status(200).json(tagData);
   } catch (err) {
-    console.log(req.params.id);
-    console.log("BODY: "+Object.keys(req.body));
-    console.log("BODY: "+Object.values(req.body));
     res.status(400).json(err);
   }
 
